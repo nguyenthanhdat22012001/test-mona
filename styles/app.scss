@@ -1,0 +1,130 @@
+@import "./variables";
+
+@font-face {
+    font-family: "Biennale";
+    src: url("../assets/fonts/Biennale_Regular.otf"),
+}
+
+// html{
+//     font-size: 62.5% ; // 1rem = 10px
+// }
+body{
+    font-family: "Biennale", sans-serif;
+    // line-height: 1.4;
+    font-weight: 400;
+    font-size: 14px;
+}
+*,
+*:before,
+*:after{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+a{
+    cursor: pointer;
+}
+img{
+    display: block;
+    max-width: 100%;
+  }
+
+.wrapper{
+    width: 1512px;
+    margin: 0 auto;
+}
+
+.container{
+    width: 1230px;
+    margin: 0 auto;
+}
+
+.btn{
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.btn--medium{
+    padding: 10px 16px;
+}
+
+.btn--small{
+    padding: 6px 15px;
+}
+
+.btn--big{
+    padding: 16px 20px;
+}
+
+.btn--large{
+    padding: 10px 51px;
+}
+
+.btn--blue{
+    background-color: $bgr-blue;
+    color: $text-white;
+}
+
+.btn--orange{
+    background-color: $bgr-orange;
+    color: $text-white;
+}
+
+.btn--text-orange{
+    color: $text-orange;
+    background-color: $bgr-white;
+}
+
+.btn--white{
+    background-color: $bgr-white;
+    color: $text-blue;
+}
+
+.btn--gray{
+    background-color: $bgr-gray;
+    color: $text-blue;
+}
+
+.icon-period{  
+        position: relative;
+        width: 100%;
+        height: 1px;
+        background-color: $bgr-blue;
+
+    &::before{
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 7px;
+        height: 7px;
+        background-color: $bgr-white;
+        border-radius: 100px;
+        border: 1px solid $bgr-blue;
+    }
+    &::after{
+        position: absolute;
+        content: '';
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 7px;
+        height: 7px;
+        background-color: $bgr-blue;
+        border-radius: 100px;
+    }
+}
+
+.tab-pane{
+    display: none;
+    white-space: nowrap;
+}
+.tab-pane.active {
+    display: block;
+}
+
+.tab-item.active {
+    color: $text-blue;
+    border-color: $bgr-blue;
+}

@@ -1,0 +1,416 @@
+@import "./variables";
+@import "./mixin";
+
+.list{
+    padding-top: 80px;
+    background-color: $bgr-gray;
+    position: relative;
+    &__row{
+        width: 100%;
+        background-color: $bgr-white;
+    }
+    &__top{
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        &>img{
+            opacity: 0.3;
+            padding: 0 60px;
+        }
+    }
+    &__bookingHot{
+        font-size: 12px;
+        &>h3{
+            font-size: 16px;
+            font-weight: 600;
+            color: $text-blue;
+        }    
+    }
+
+    &__tiketType{
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        margin: 0 134px 0 71px;
+        &>a{
+            padding: 0 15px;
+            position: relative;
+        }
+        & span{
+            color: $text-blue;
+        }
+        &>a:nth-child(1)::after,&>a:nth-child(2)::after{
+            position: absolute;
+            content: '';
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 24px;
+            background-color: $bgr-black;
+            opacity: 0.1;
+        }
+    }
+   
+}
+
+.btn__search{
+    display: flex;
+    align-items: center;
+    &>img{
+        padding-left: 10px;
+    }
+}
+
+.list{
+    &__body{
+        padding: 23px 10px;
+        display: flex;
+    }
+    &__main{
+      width:  890px;
+      margin-right: 10px;
+    }
+    &__sidebar{
+      width:  270px;
+      border-radius: 12px;
+    }
+    &__filter{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        &>span{
+            font-size: 12px;
+            font-weight: 600;
+            padding-right: 14px;
+            opacity: 0.5;
+        }
+    }
+    &__customSelect{
+        padding-right: 5px;
+        &>select{
+            width: 120px;
+            font-size: 12px;
+            border-radius: 12px;
+            padding: 8px 15px;
+            border: none;
+            -webkit-appearance: none;
+            background-image: url("../assets/images/dropdown.svg");
+            background-position: 90% center; /*Positioning*/
+            background-repeat: no-repeat; /*Prevent showing multiple background images*/
+        }
+    }
+    &__flight{
+        padding: 15px;
+        border-radius: 12px;
+        margin: 5px 0;
+    }
+    &__flightTop{
+        display: flex;
+        align-items: center;
+    }
+    &__flightLogo{
+        display: flex;
+        align-items: center;
+        &>img{
+            padding-right: 12px;
+        }
+        &>h3{
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+    &__flightTimes{
+        margin: 0 45px 0 40px;
+        display: flex;
+        align-items: center;
+        &__col{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-weight: 600;
+            &>span{
+                font-size: 12px;
+                padding-top: 7px;
+            }
+        }
+        &__period{
+            width: 78px;
+            position: relative;
+            font-weight: 400;
+           margin: 0 16px;
+        }
+        &__icon{
+            width: 100%;
+            position: absolute;
+            top: 50%;
+        }
+    }
+    &__flightCondition{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-right: 30px;
+        font-weight: 600;
+        &>p{
+            display: flex;
+            align-items: center;
+        }
+        & img{
+            padding-right: 7px;
+        }
+        & span{
+            color: $text-blue;
+            padding-left: 5px;
+        }
+    }
+    &__flightFrice{
+        @include flexbox(flex-start,space-between, nowrap,column);
+        margin-right: 61px;
+        &>span:first-child{
+            opacity: 0.5;
+        }
+        &>span:last-child{
+            font-weight: 600;
+            color: $text-orange;
+        }
+    }
+
+    &__flightTab{
+        display: none;
+        padding: 26px 0 16px 0 ;
+
+        &__listTab{ 
+            text-transform: uppercase;
+            font-weight: 600;
+            background-color: #F8F8F8;
+            overflow: hidden;
+            & li>a{
+                font-size: 12px;
+            }
+            & ul>li:last-child{
+                position: relative;
+            }
+            & ul>li:last-child::after{
+                position: absolute;
+                content: '';
+                top: 50%;
+                left: 130%;
+                transform: translateY(-50%);
+                width: 800px;
+                height: 1px;
+                background-color: $text-black;
+                opacity: 0.1;
+            }
+        } 
+        
+        &__tabContent{
+            padding-top: 19px;
+        }
+
+    }
+
+    &__flightTab.active{
+        display: block;
+    }
+
+    &__flightDetail{
+        @include flexbox(); 
+        &__col{
+            
+            @include flexbox(flex-start,space-between, nowrap,column);
+        }
+        &__col:first-child{
+            position: relative;
+            padding-right: 22px;
+        }
+        &__col:nth-child(2){
+            padding-left: 30px;
+        }
+        &__col:last-child{
+            padding-left: 157px;
+            flex: 1;
+        }
+        &__icon{
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 136px !important;
+            width: 100%;
+            transform: rotate(90deg);
+        }
+        &__time{
+            @include flexbox(flex-start,flex-start, nowrap,column);
+        }
+        &__textBold{
+            font-weight: 600;
+        }
+        &__textSmall{
+            font-size: 12px;
+        }
+        &__period{
+            padding: 32px 0 51px 0;
+        }
+        &__location:first-child{
+            padding-bottom: 104px;
+        }
+        &__condition{
+            @include flexbox();
+            width: 100%;
+            padding-top: 32px;
+            & p {
+                padding: 2px 0;
+            }
+            &>div{
+                padding-right: 63px;
+                margin: 0;
+            }
+        }
+    }
+
+    &__flightInfo{
+        @include flexbox();
+        &__col:first-child{
+            margin-right: 114px;
+            white-space: nowrap;
+        }
+        &__col:last-child{
+            width: 100%;
+        }
+        &__title{
+            font-weight: 600;
+            text-transform: uppercase;
+            padding-bottom: 15px;
+        }
+        &__location{
+            margin: 10px 0 15px 0;
+            @include flexbox();
+            &>p:first-child{
+                margin-right: 74px;
+                @include flexbox(flex-start,flex-start, nowrap,column);
+            }
+            & span{
+                color: $text-blue;
+                font-size: 12px;
+            }
+        }
+        &__note{
+            font-size: 12px;
+        }
+
+        &__priceDetail,&__priceTotal{
+            @include flexbox();
+        }
+
+        // &__priceItem:nth-child(1),&__priceItem:nth-child(2){
+        //     padding-right: 171px;
+        // }
+        &__priceItem{
+            width: 50%;
+            @include flexbox(flex-start,flex-start, nowrap,column);
+            white-space: nowrap;
+            border-bottom: 1px solid $bgr-gray;
+            &>span{
+                padding: 5px 0;
+            }
+        }
+     
+        &__priceTotal{
+            &>div{
+                border: none;
+            }
+        }
+    }
+
+   
+
+    &__sidebar{
+        padding: 15px;
+        &>h3{
+            font-weight: 600;
+            text-transform: uppercase;
+            padding-bottom: 15px;
+        }
+        &__total{
+            padding: 15px;
+            background-color: #F8F8F8;
+            @include flexbox(flex-start,space-between, nowrap,column);
+            &>span:last-child{
+                color: $text-orange;
+                font-weight: 600;
+            }
+        }
+    }
+
+    &__yourFlight{
+        @include flexbox(center);
+        position: relative;
+        padding: 0 0 10px 0;
+        &__line{
+            padding: 15px 0 16px 0; 
+        }
+        &__line::before{
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: $bgr-black;
+            opacity: 0.1;
+        }
+        &__icon{
+            @include flexbox(center,center);
+            width: 30px;
+            height: 30px;
+            border-radius: 100px;
+            color: $text-white;
+            font-weight: 600;
+        }
+        &__iconGray{
+            background-color: $bgr-grayMore;
+        }
+        &__iconBlue{
+            background-color: $bgr-blue;
+        }
+        &__text{
+            @include flexbox(flex-start,space-between, nowrap,column);
+            padding-left: 12px;
+        }
+        &__textBold{
+            font-weight: 600;
+            letter-spacing: 0.1em;
+        }
+        &__textQR{
+            font-size: 12px;
+            &>span:first-child{
+                padding-right:5px;
+                position: relative;
+                &::after{
+                    position: absolute;
+                    content: '';
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 100%;
+                    width: 3px;
+                    height: 3px;
+                    border-radius: 100px;
+                    background-color: $bgr-black;
+                }
+            }
+            &>span:last-child{
+                padding-left:5px;
+            }
+        }
+        &__link{
+            font-weight: 600;
+            font-size: 12px;
+            text-decoration: underline;
+            color: $text-blue;
+        }
+        &__btn{
+            font-size: 12px;
+            margin: 22px 0 15px;
+        }
+    }
+}

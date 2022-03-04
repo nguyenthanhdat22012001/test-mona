@@ -1,0 +1,44 @@
+@import "./variables";
+
+.footer{
+    display: flex;
+    margin: 50px 0 40px 0;
+    padding: 0px 30px 40px 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.col{
+    display: flex;
+    align-items: center;
+}
+
+.contact{
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    &>img{
+        padding-right: 5px;
+    }
+}
+
+.follow{
+    display: flex;
+    align-items: center;
+    &>span{
+        margin-right: 60px;
+        position: relative;
+    }
+    &>span::after{
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: calc(100% + 10px) ;
+        transform: translateY(-50%);
+        width: 40px;
+        border: 1px solid $bgr-blue;
+    }
+    & img{
+        padding-right: 10px;
+    }
+}
